@@ -1,0 +1,95 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("d:/Documents/2016/Research/knowledgeoverlap/" . "util/")
+ ("d:/Documents/2016/Research/" . "knowledgeoverlap/")
+ ("e:/Downloads/" . "tmp/")
+ ("d:/Documents/My Games/Borderlands/WillowGame/" . "Config/")
+ ("d:/Documents/My Games/Borderlands/" . "WillowGame/")
+ ("d:/Documents/My Games/" . "Borderlands/")
+ ("d:/Documents/2016/" . "Research/")
+ ("d:/Documents/" . "2016/")
+ ("d:/" . "Documents/")
+ ("e:/NetLogo 5.3.1/app/models/" . "Code Examples/")
+ ("e:/NetLogo 5.3.1/app/" . "models/")
+ ("e:/" . "Downloads/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "d:/Documents/home/.emacs.d/auto-complete-1.3.1/"
+ "d:/Documents/home/"
+ "d:/Documents/2016/Research/"
+ "d:/Documents/My Games/Borderlands/WillowGame/Config/"
+ "d:/Documents/2016/Research/knowledgeoverlap/util/"
+ "d:/Documents/2016/Research/knowledgeoverlap/obj/"
+ "d:/Documents/2016/Research/netlogo/"
+ "e:/Downloads/"
+ "e:/"
+ "e:/NetLogo 5.3.1/app/models/Code Examples/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "Makefile"
+ ".emacs"
+ "Firms_beta.java"
+ "Firms.java"
+ "ClosedInnovation.java"
+ "Firms_alpha.java"
+ "OpenInnovationFlexible.java"
+ "OpenInnovationFixed.java"
+ "files.txt"
+ "1"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("d:/Documents/home/.emacs.d/auto-complete-1.3.1/" (22328 57412 0 0) "TODO.txt" "README.txt" "popup.el" "Makefile" "fuzzy.el" "etc/" "doc/" "dict/" "COPYING.GPLv3.txt" "COPYING.FDL.txt" "auto-complete.el" "auto-complete-config.el" "../" "./")
+
+ ("d:/Documents/" (22399 935 0 0) "WeChat Files/" "Tencent Files/" "Teiron/" "Sound recordings/" "Outlook Files/" "My Games/" "lanbosudo-BB/" "ihelper/" "home/" "Dropbox/" "Diablo II/" "desktop.ini" "Default.rdp" "Custom Office Templates/" "BlackBerry/" "baby/" "autohotkey.ahk" "5211game/" "2016/" "2015/" "../" "./")
+
+ ("d:/Documents/2016/Research/" (22399 48736 0 0) "tmp.csv" "Test.java" "TAGS" "pseudocode.docx" "pseudocode" "OpenInnovationFlexible.java" "OpenInnovationFlexible.class" "OpenInnovationFixed.java" "OpenInnovationFixed.class" "netlogo/" "Main.java" "Main.class" "knowledgeoverlap.zip" "knowledgeoverlap/" "JavaData.xlsx" "Firms_beta.java" "Firms_beta.class" "Firms_alpha.java" "Firms_alpha.class" "Firms.java" "firms.class" "files.txt" "ClosedInnovation.java" "ClosedInnovation.class" "../" "./")
+
+ ("d:/Documents/home/" (22398 19826 0 0) ".history" ".emacs.d/" ".emacs" "../" "./")
+
+ ("d:/Documents/My Games/Borderlands/WillowGame/Config/" (22397 54136 0 0) "WillowUI.ini" "WillowInput.ini" "WillowGearboxLabs.ini" "WillowGame.ini" "WillowEngine.ini~" "WillowEngine.ini" "WillowEditorUserSettings.ini" "WillowEditor.ini" "WillowCompat.ini" "../" "./")
+
+ ("e:/Downloads/" (22395 51414 0 0) "网络机顶盒刷机工具/" "从OS10.3.3.746（SR498）提取的安卓模拟器.zip" "zedge1504payments.zip" "zedge1504payments/" "UltraISO_one_gr/" "u9WSH.exe" "tmp/" "sys.android.shell-10.3.3.150.bar" "sys.android-10.3.3.150.bar" "SharpKeys.exe" "procexp64.exe" "OldFiles/" "MP3排序软件.zip" "MP3排序软件/" "MP3/" "MICROSOFT.OFFICE.PROFESSIONAL.PLUS.2013.X64.VOLUME.ENGLISH.DVD-MSVLSC/" "MEI_Intel_Win81_VER95151730/" "MEI_Intel_Win81_VER95141724/" "iTunes6464Setup.exe" "Intel Components/" "FormatFactory_3.9.0.0_setup.1461565090.exe" "DLLs/" "desktop.ini" "Battle.net-Setup.exe" "8168882.xml" "../" "./")
+
+ ("d:/Documents/2016/Research/knowledgeoverlap/util/" (22394 25623 0 0) "StatCalc.java" "MersenneTwisterFast.java" "Globals.java" "Debug.java" "../" "./")
+
+ ("d:/Documents/2016/Research/knowledgeoverlap/app/" (22394 25623 0 0) "Simulation.java" "../" "./")
+
+ ("d:/Documents/2016/Research/knowledgeoverlap/obj/" (22394 31080 0 0) "Unit.java" "Organization.java" "Location.java" "Landscape.java" "Interdependence.java" "InfluenceMatrix.java" "Agile.java" "../" "./")
+
+ ("d:/Documents/2016/Research/knowledgeoverlap/" (22394 25623 0 0) "util/" "obj/" "inf/" "conf/" "app/" ".DS_Store" "../" "./")
+
+ ("d:/Documents/2016/Research/netlogo/" (22385 15493 0 0) "test.nlogo" "Super_K_5_Data.csv" "Super_K_4_Data.csv" "Super_K_3_Data.csv" "Super_K_2_Data.csv" "Super_K_1_Data.csv" "Supercharged.nlogo" "OpenInnovationFlexible.nlogo" "OpenInnovationFixedData.csv" "OpenInnovationFixed.nlogo" "NetLogo_manual_chinese.pdf" "NetLogo User Manual.pdf" "LocalMax_K_9_Data.csv" "LocalMax_K_8_Data.csv" "LocalMax_K_7_Data.csv" "LocalMax_K_6_Data.csv" "LocalMax_K_5_Data.csv" "LocalMax_K_4_Data.csv" "LocalMax_K_3_Data.csv" "LocalMax_K_2_Data.csv" "LocalMax_K_1_Data.csv" "LocalMax_K_15_Data.csv" "LocalMax_K_14_Data.csv" "LocalMax_K_13_Data.csv" "LocalMax_K_12_Data.csv" "LocalMax_K_11_Data.csv" "LocalMax_K_10_Data.csv" "LocalMaxData.xlsx" "LandscapeCheck.nlogo" "Flexible_K_5_Data.csv" "Flexible_K_4_Data.csv" "Flexible_K_3_Data.csv" "Flexible_K_2_Data.csv" "Flexible_K_1_Data.csv" "Fixed_K_5_Data.csv" "Fixed_K_4_Data.csv" "Fixed_K_3_Data.csv" "Fixed_K_2_Data.csv" "Fixed_K_1_Data.csv" "Data.xlsx" "Closed_K_5_Data.csv" "Closed_K_4_Data.csv" "Closed_K_3_Data.csv" "Closed_K_2_Data.csv" "Closed_K_1_Data.csv" "ClosedInnovationCode.nlogo" "ClosedInnovation.nlogo" "../" "./")
+
+ ("d:/Documents/2016/" (22381 23551 0 0) "本高2011届18班毕业生信息统计表.xlsx" "本溪高中2011届18班同学联系方式.xls" "VID_20160507_133052.mp4" "Supervisor/" "Singapore - Employee Visa _Electronic Questionnaire——.docx" "Singapore - Employee Visa _Electronic Questionnaire.docx" "Research/" "Renting/" "QE/" "PengYingbo__.pdf" "PengYingbo.pdf" "Moving out sale.docx" "KangJiatong.pdf" "IMG_20160525_164644 - Copy.jpg" "HomePCReload/" "Appointment-of-New-Change-of-Supervisor(s)-Form_PengYingbo.pdf" "../" "./")
+
+ ("e:/Downloads/tmp/" (22353 45033 0 0) "[Sabusuka] AIR-H! [Chinese]/" "Sakura Swim Club/" "Sakura Spirit/" "Sakura Fantasy/" "Sakura Angels/" "Mama是女子校生/" "ko/" "cg/" "../" "./")
+
+ ("d:/Documents/My Games/Borderlands/WillowGame/" (22325 60163 0 0) "Logs/" "Config/" "../" "./")
+
+ ("d:/Documents/My Games/Borderlands/" (22325 60166 0 0) "WillowGame/" "SaveData/" "Binaries/" "../" "./")
+
+ ("d:/Documents/My Games/" (22325 62349 0 0) "Rocket League/" "Borderlands/" "../" "./")
+
+ ("e:/emacs-24.5-bin-i686-mingw32/" (22326 13833 0 0) "var/" "share/" "libexec/" "bin/" "../" "./")
+
+ ("e:/NetLogo 5.3.1/app/models/Code Examples/" (22332 17767 0 0) "weathermap.jpg" "Wall Following Example.png" "Wall Following Example.nlogo" "Vision Cone Example.png" "Vision Cone Example.nlogo" "User Interaction Example.png" "User Interaction Example.nlogo" "Tutorial 3.png" "Tutorial 3.nlogo" "Transparency Example.png" "Transparency Example.nlogo" "Tie System Example.png" "Tie System Example.nlogo" "Table Example.png" "Table Example.nlogo" "State Machine Example.png" "State Machine Example.nlogo" "Sound/" "Shape Animation Example.png" "Shape Animation Example.nlogo" "Scatter Example.png" "Scatter Example.nlogo" "Scale-color Example.png" "Scale-color Example.nlogo" "Rolling Plot Example.png" "Rolling Plot Example.nlogo" "Random Walk Example.png" "Random Walk Example.nlogo" "Random Seed Example.png" "Random Seed Example.nlogo" "Random Network Example.png" "Random Network Example.nlogo" "Random Grid Walk Example.png" "Random Grid Walk Example.nlogo" "QuickTime Extension/" "Profiler Example.png" "Profiler Example.nlogo" "Plotting Example.png" "Plotting Example.nlogo" "Plot Smoothing Example.png" "Plot Smoothing Example.nlogo" "Plot Axis Example.png" "Plot Axis Example.nlogo" "Perspective Example.png" "Perspective Example.nlogo" "Perspective Demos/" "Patch Coordinates Example.png" "Patch Coordinates Example.nlogo" "Patch Clusters Example.png" "Patch Clusters Example.nlogo" "Partners Example.png" "Partners Example.nlogo" "Palette Example.png" "Palette Example.nlogo" "One Turtle Per Patch Example.png" "One Turtle Per Patch Example.nlogo" "Next Patch Example.png" "Next Patch Example.nlogo" "Network Import Example.png" "Network Import Example.nlogo" "Network Example.png" "Network Example.nlogo" "Neighborhoods Example.png" "Neighborhoods Example.nlogo" "Myself Example.png" "Myself Example.nlogo" "Movie Example.png" "Movie Example.nlogo" "Move Towards Target Example.png" "Move Towards Target Example.nlogo" "Mouse Recording Example.png" "Mouse Recording Example.nlogo" "Mouse Example.png" "Mouse Example.nlogo" "Mouse Drag One Example.png" "Mouse Drag One Example.nlogo" "Mouse Drag Multiple Example.png" "Mouse Drag Multiple Example.nlogo" "Moore & Von Neumann Example.png" "Moore & Von Neumann Example.nlogo" "Mobile Aggregation Example.png" "Mobile Aggregation Example.nlogo" "Matrix Example.png" "Matrix Example.nlogo" "Many Regions Example.png" "Many Regions Example.nlogo" "Lottery Example.png" "Lottery Example.nlogo" "Look Ahead Example.png" "Look Ahead Example.nlogo" "links.txt" "Link-Walking Turtles Example.png" "Link-Walking Turtles Example.nlogo" "Link Lattice Example.png" "Link Lattice Example.nlogo" "Link Breeds Example.png" "Link Breeds Example.nlogo" "Line of Sight Example.png" "Line of Sight Example.nlogo" "Lattice-Walking Turtles Example.png" "Lattice-Walking Turtles Example.nlogo" "Label Position Example.png" "Label Position Example.nlogo" "Intersecting Links Example.png" "Intersecting Links Example.nlogo" "Intersecting Lines Example.png" "Intersecting Lines Example.nlogo" "Info Tab Example.png" "Info Tab Example.nlogo" "Image Import Example.png" "Image Import Example.nlogo" "HSB and RGB Example.png" "HSB and RGB Example.nlogo" "Histogram Example.png" "Histogram Example.nlogo" "Hill Climbing Example.png" "Hill Climbing Example.nlogo" "Hex Turtles Example.png" "Hex Turtles Example.nlogo" "Hex Cells Example.png" "Hex Cells Example.nlogo" "Hatch Example.png" "Hatch Example.nlogo" "Halo Example.png" "Halo Example.nlogo" "Grouping Turtles Example.png" "Grouping Turtles Example.nlogo" "GoGoMonitorSimpleSerial.png" "GoGoMonitorSimpleSerial.nlogo" "GoGoMonitorSimple.png" "GoGoMonitorSimple.nlogo" "GoGoMonitorSerial.png" "GoGoMonitorSerial.nlogo" "GoGoMonitor.png" "GoGoMonitor.nlogo" "GIS/" "Fully Connected Network Example.png" "Fully Connected Network Example.nlogo" "File Output Example.png" "File Output Example.nlogo" "File IO Patch Data.txt" "File Input Example.png" "File Input Example.nlogo" "ecoli.jpg" "earth.gif" "Diffuse Off Edges Example.png" "Diffuse Off Edges Example.nlogo" "dandelions.gif" "Communication-T-T Example.png" "Communication-T-T Example.nlogo" "Communication-T-P Example.png" "Communication-T-P Example.nlogo" "Color Chart Example.png" "Color Chart Example.nlogo" "Circular Path Example.png" "Circular Path Example.nlogo" "Case Conversion Example.png" "Case Conversion Example.nlogo" "Breeds and Shapes Example.png" "Breeds and Shapes Example.nlogo" "Breed Procedures Example.png" "Breed Procedures Example.nlogo" "Box Drawing Example.png" "Box Drawing Example.nlogo" "Bounce Example.png" "Bounce Example.nlogo" "attributes.txt" "Ask-Concurrent Example.png" "Ask-Concurrent Example.nlogo" "Ask Ordering Example.png" "Ask Ordering Example.nlogo" "aquifer-egypt.jpg" "3D Shapes Example.png" "3D Shapes Example.nlogo" "../" "./")
+
+ ("e:/NetLogo 5.3.1/app/models/" (22332 17768 0 0) "Sample Models/" "index.txt" "IABM Textbook/" "HubNet Activities/" "Curricular Models/" "Code Examples/" "Alternative Visualizations/" "3D/" "../" "./")
+
+ ("e:/NetLogo 5.3.1/app/" (22332 17768 0 0) "test-interface-0.5.jar" "swing-layout-9.1.jar" "scala-library-2.9.2.jar" "quaqua-9.1.jar" "picocontainer-2.13.6.jar" "pegdown-1.1.0.jar" "parboiled-java-1.0.2.jar" "parboiled-core-1.0.2.jar" "objenesis-1.0.jar" "netlogo_logging.xml" "NetLogoLite.jar" "NetLogo.jar" "NetLogo.cfg" "NetLogo Logging.cfg" "NetLogo 3D.cfg" "natives/" "models/" "log4j-1.2.16.jar" "junit-dep-4.4.jar" "junit-4.10.jar" "json-simple-1.1.1.jar" "jogl-2.3.2.jar" "jmock-legacy-2.5.1.jar" "jmock-junit4-2.5.1.jar" "jmock-2.5.1.jar" "jmf-2.1.1e.jar" "jline-2.9.2.jar" "jhotdraw-6.0b1.jar" "jansi-1.4.jar" "HubNet.jar" "HubNet Client.cfg" "httpmime-4.2.jar" "httpcore-4.2.jar" "httpclient-4.2.jar" "gluegen-rt-2.3.2.jar" "extensions/" "docs/" "commons-logging-1.1.1.jar" "commons-codec-1.6.jar" "cglib-nodep-2.1_3.jar" "asm-util-3.3.1.jar" "asm-tree-3.3.1.jar" "asm-analysis-3.3.1.jar" "asm-all-3.3.1.jar" "asm-3.3.1.jar" "../" "./")
+
+ ("e:/NetLogo 5.3.1/" (22332 17769 0 0) "runtime/" "readme.md" "packager.dll" "NetLogo.ico" "NetLogo.exe" "NetLogo User Manual.pdf" "NetLogo Logging.ico" "NetLogo Logging.exe" "NetLogo 3D.ico" "NetLogo 3D.exe" "msvcr120.dll" "msvcr100.dll" "msvcp120.dll" "model.ico" "Mathematica Link/" "HubNet Client.ico" "HubNet Client.exe" "app/" "../" "./")
+
+ ("e:/emacs-24.5-bin-i686-mingw32/bin/" (22326 13777 0 0) "runemacs.exe" "libXpm.dll" "grep-changelog" "etags.exe" "emacsclientw.exe" "emacsclient.exe" "emacs.exe" "emacs-24.5.exe" "ebrowse.exe" "ctags.exe" "addpm.exe" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
