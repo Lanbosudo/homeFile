@@ -59,8 +59,11 @@
 (require 'color-theme)
 (require 'color-theme-solarized)
 (color-theme-initialize)
+(color-theme-tty-dark)
+;;(color-theme-clarity)
+;;(color-theme-matrix)
 ;;(color-theme-gnome2)
-(color-theme-solarized-dark)
+;;(color-theme-solarized-dark)
 ;;(color-theme-comidia)
 ;;(color-theme-bharadwaj-slate)
 ;;(color-theme-euphoria)
@@ -73,7 +76,7 @@
 ;;   (interactive)
 ;;   (w32-send-sys-command 61488))
 ;; (add-hook 'window-setup-hook 'w32-maximize-frame t)
-(global-hl-line-mode 1)
+(global-hl-line-mode -1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -350,9 +353,19 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;start emacs server so that open file in the existing emacs frame
-(server-start)
+;;removed because of adoption of ConEmu
+;;(server-start)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;prevent the error message for git commit, disable vc-git (don't know why)
 (setq vc-handled-backends ())
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;ahk-mode
+(load-file "~/.emacs.d/ahk-org-mode/ahk-org-mode.el")
+
+(setq ahk-syntax-directory "~/.emacs.d/ahk-org-mode/syntax/")
+;(add-to-list 'auto-mode-alist '("\\.ahk$" . ahk-org-mode))
+;(autoload 'ahk-org-mode "ahk-org-mode")
