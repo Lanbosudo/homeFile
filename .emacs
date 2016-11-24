@@ -55,33 +55,35 @@
 (add-to-list 'load-path' ;;"D:/Emacs/site-lisp/color-theme-6.6.0/")
 			 "~/.emacs.d/color-theme-6.6.0/")
 (add-to-list 'load-path' ;;"D:/Emacs/site-lisp/color-theme-6.6.0/")
-			 "~/.emacs.d/emacs-color-theme-solarized-master")
+			 "~/.emacs.d/emacs-color-theme-solarized")
 (require 'color-theme)
 (require 'color-theme-solarized)
 (color-theme-initialize)
-(color-theme-tty-dark)
+;;(color-theme-tty-dark)
 ;;(color-theme-clarity)
 ;;(color-theme-matrix)
 ;;(color-theme-gnome2)
 ;;(color-theme-solarized-dark)
-;;(color-theme-comidia)
+(color-theme-comidia)
 ;;(color-theme-bharadwaj-slate)
 ;;(color-theme-euphoria)
 ;;(color-theme-gray30) ;;gray background, bad transparent effects
 ;;(color-theme-green-kingsajz) ;;white background
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; full-screen
-;; (defun w32-maximize-frame ()
-;;   "Maximize the current frame"
-;;   (interactive)
-;;   (w32-send-sys-command 61488))
-;; (add-hook 'window-setup-hook 'w32-maximize-frame t)
+(defun w32-maximize-frame ()
+  "Maximize the current frame"
+  (interactive)
+  (w32-send-sys-command 61488))
+(add-hook 'window-setup-hook 'w32-maximize-frame t)
 (global-hl-line-mode -1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;(set-frame-parameter (selected-frame) 'alpha '(<active> [<incactive>]))
-(set-frame-parameter (selected-frame) 'alpha ' (95 95))
+(set-frame-parameter (selected-frame) 'alpha ' (70 70))
 ;;(add-to-list 'default-frame-alist '(alpha 95 95))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -185,12 +187,15 @@
 ;;autocomplete
 
 ;;get auto-complete-mode
+(add-to-list 'load-path "~/.emacs.d/popup-el")
+(require 'popup)
+
 (add-to-list 'load-path ;;"D:/Emacs/site-lisp/auto-complete-1.3.1")
-			 "~/.emacs.d/auto-complete-1.3.1/")
+			 "~/.emacs.d/auto-complete")
 (require 'auto-complete-config)
 
 (add-to-list 'ac-dictionary-directories ;;"D:/Emacs/site-lisp/auto-complete-1.3.1/dict")
-			 "~/.emacs.d/auto-complete-1.3.1/dict")
+			 "~/.emacs.d/auto-complete/dict")
 (ac-config-default)
 
 (global-auto-complete-mode t)
@@ -257,12 +262,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;for dictionary -- dictd server
 ;;from "http://user.in-berlin.de/~myrkr/dictionary/"
-(add-to-list 'load-path ;;"D:/Emacs/site-lisp/dictionary-1.10")
-			 "~/.emacs.d/dictionary-1.10")
-(load "dictionary-init")
+;(add-to-list 'load-path ;;"D:/Emacs/site-lisp/dictionary-1.10")
+;			 "~/.emacs.d/dictionary-1.10")
+;(load "dictionary-init")
 ;;key bindings
-(global-set-key "\C-cs" 'dictionary-search)
-(global-set-key "\C-cm" 'dictionary-match-words)
+;(global-set-key "\C-cs" 'dictionary-search)
+;(global-set-key "\C-cm" 'dictionary-match-words)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -275,8 +280,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;eshell-prompt customize
-(load ;;"D:/Emacs/site-lisp/eshell-customize.el")
- "~/.emacs.d/eshell-customize.el")
+;(load "~/.emacs.d/eshell-customize.el")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -295,15 +299,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;matlab mode
 ;; (autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)
-(add-to-list 'load-path ;;"D:/Emacs/site-lisp/matlab-emacs")
-			 "~/.emacs.d/matlab-emacs")
-(load-library "matlab-load")
-(add-to-list 'auto-mode-alist
-			 '("\\.m$" . matlab-mode))
-(add-hook 'matlab-mode
-		  (lambda ()
-			(auto-complete-mode 1)
-			))
+;; (add-to-list 'load-path ;;"D:/Emacs/site-lisp/matlab-emacs")
+;; 			 "~/.emacs.d/matlab-emacs")
+;; (load-library "matlab-load")
+;; (add-to-list 'auto-mode-alist
+;; 			 '("\\.m$" . matlab-mode))
+;; (add-hook 'matlab-mode
+;; 		  (lambda ()
+;; 			(auto-complete-mode 1)
+;; 			))
 ;; (setq matlab-indent-function t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -338,7 +342,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;netlogo syntax
-(load-file "~/.emacs.d/netlogo-mode.el")
+;;(load-file "~/.emacs.d/netlogo-mode.el")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -353,8 +357,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;start emacs server so that open file in the existing emacs frame
-;;removed because of adoption of ConEmu
-;;(server-start)
+(server-start)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -369,3 +372,22 @@
 (setq ahk-syntax-directory "~/.emacs.d/ahk-org-mode/syntax/")
 ;(add-to-list 'auto-mode-alist '("\\.ahk$" . ahk-org-mode))
 ;(autoload 'ahk-org-mode "ahk-org-mode")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;csv-mode
+(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
+(autoload 'csv-mode "~/.emacs.d/csv-mode.el"
+  "Major mode for editing comma-separated value files." t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;bash in shell mode
+(add-hook 'comint-output-filter-functions
+    'shell-strip-ctrl-m nil t)
+(add-hook 'comint-output-filter-functions
+    'comint-watch-for-password-prompt nil t)
+(setq explicit-shell-file-name "bash.exe")
+;; For subprocesses invoked via the shell
+;; (e.g., "shell -c command")
+(setq shell-file-name explicit-shell-file-name)
