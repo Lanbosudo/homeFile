@@ -9,7 +9,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; launch page change to scratch buff instead of welcome page
 ;; disabled because of not useful
-;; (setq inhibit-splash-screen t)
+(setq inhibit-splash-screen t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -40,7 +40,8 @@
  '(scroll-bar-mode nil)
  '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60)))
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(read-file-name-completion-ignore-case t))
 ;;(custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -244,8 +245,10 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;w3m -- not supported for Emacs 23??
+;;w3m won't work in win10 
+;;w3m
+;;(add-to-list 'load-path "E:/emacs-24.5-bin-i686-mingw32/share/emacs/site-lisp/w3m");;"~/.emacs.d/emacs-w3m-master/")
+;;(require 'w3m-load)
 ;;(add-to-list 'load-path "D:/Emacs/site-lisp/emacs-w3m-1.4.4")
 ;;(setq browse-url-browser-function 'w3m-browse-url)
 ;;(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
@@ -357,7 +360,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;start emacs server so that open file in the existing emacs frame
-(server-start)
+;;removed because of ConEmu
+;(server-start)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
