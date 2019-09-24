@@ -1,7 +1,3 @@
-" source ~/vimSource/vimrc_example.vim
-" source ~/vimSource/mswin.vim
-" behave mswin
-
 " original settings, including nocompatible and filetype and syntax...
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -32,31 +28,15 @@ set langmenu=en_GB.UTF-8
 syntax on
 set hlsearch
 
-" colorschem vividchalk
-" let g:solarized_termcolors=16
-" set t_Co=256
-" syntax enable
-" set background=dark
-" colorscheme solarized
-
 " file encoding
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 " remap the ESC and leader key(used for replace Ctrl)
 let mapleader = ","
-" imap jk <esc>
-"imap <leader>n <C-n>
-" cmap jk <C-C>
 nmap ; :
-nmap <leader>z zz
-nmap <leader>r <C-r>
-nmap <leader>w <C-w>
-nmap <leader>y <C-y>
-nmap <leader>e <C-e>
 " stop 'Z''Z' from closing file without saving
 nmap ZZ zz
-nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 nnoremap <CR> :noh<CR>
 
 set history=50        " keep 50 lines of command line history
@@ -73,40 +53,20 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set nobk
-" set wildmenu		" show the waiting-for-selected items on statusline
-"                    >_< (hard to find)
-"                    prefer  now
+
+set background=dark
+colorscheme solarized
+
 set wildmode=list:longest
 " set ignorecase
 set wildignorecase
-
-" maps about the compile
-" map <F2> :!cls<CR>
-map <F5> :!g++ -g -Wall % -o %<.exe <CR>
-" map <F6> :!make <CR>
-" map <F7> :!g++ -g -Wall *.cpp *.h -o execute.exe <CR>
-" map <F8> :!gdb *.exe <CR>
-
-" set the window size
-set winheight=10
-set winwidth=70
 
 " set the closed buffer to hid instead of unactive, which makes the changes
 " remains
 set hidden
 
-" disable the mouse
-set mouse=""
-
 " set the statusline
 set laststatus=2
-
-" set noautochdir
-
-
-" abbreviate for some usual commands
-abbreviate sop System.out.print()
-abbreviate sopl System.out.println()
 
 " set fold flag background black
 highlight Folded guibg=black
@@ -117,80 +77,59 @@ autocmd BufWinEnter _vimrc silent loadview
 autocmd BufWinEnter *.* silent loadview
 autocmd BufEnter * silent! lcd %:p:h
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle Plugin
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-"""""""""""""""""""""""""""""""""""""""
-filetype off
-" about the git or curl of vundle plugin
-" set rtp+=D:/Vim/vimfiles/.vim/bundle/vundle/
-" trying to move the rtp but failed
-set rtp+=~/.vim/bundle/Vundle.vim/
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle
-" required!
+" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
 """""""""""""""""""""""""""""""""""""""
 " My Bundles here:
-"
-" not easy to use; too many functions over my head :p
-" Plugin 'OmniCppComplete'
-" Plugin 'ajh17/VimCompletesMe'
-" Plugin 'neocomplcache'
 " next generation of neocomplcache
 Plugin 'Shougo/neocomplete.vim'
-" Junst cannot compile and install.....TAT
-" Plugin 'Valloric/YouCompleteMe'
-"
-" Track the engine (works on Vim 7.4 +)
-if has('gui_running')
-else
-    Plugin 'SirVer/ultisnips'
-endif
+" Code block completion
+Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
-"
-" statuline replacing powerline(not practical in cygwin)
-" Plugin 'millermedeiros/vim-statline'
 " Light statusline
 Plugin 'vim-airline/vim-airline'
-"
 " Vim tag management
 " Plugin 'majutsushi/tagbar'
+" Plugin 'ludovicchabant/vim-gutentags.git'
+
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-shell'
-
+Plugin 'airblade/vim-rooter'
+" Project directory tree
+Plugin 'scrooloose/nerdtree'
 
 " vim-scripts repos
+
 Plugin 'ctrlp.vim'
 " buffer manager
 Plugin 'bufexplorer.zip'
-" directory tree
-" Plugin 'The-NERD-tree'
-" NERD_TREE plugin
-" Plugin 'NERD_tree-Project'
-" compile error check (installation process unkonwn)
-" Plugin 'Syntastic'
-
 " Skip through codes
 Plugin 'EasyMotion'
 
-" Org mode support
-Plugin 'vim-orgmode'
-Plugin 'speeddating.vim'
-" Plugin 'NrrwRgn'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-" non github repos
-" Plugin 'git://git.wincent.com/command-t.git'
-"""""""""""""""""""""""""""""""""""""""
-call vundle#end()               " required!
-filetype plugin indent on     " required!
-"
 """"""""""""""""""""""""""""""""""""""""""
+" Plugins configuration
+
 " neocomplete setting
 let g:neocomplete#enable_at_startup = 1
 
-""""""""""""""""""""""""""""""""""""""
 " ctrlp option
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_regexp = 0
@@ -202,28 +141,22 @@ if executable('grep')
                 \ 'find %s -type f |grep -v -E "\.jpg$|/tmp/"'          " MacOSX/Linux
 endif
 
-""""""""""""""""""""""""""""""""""""""
-" BuffExplorer option
-" let g:bufExplorerShowUnlisted=1      " Show unlisted buffers.
-""""""""""""""""""""""""""""""""""""""
 " vim-airline
-" silent! call airline#extensions#whitespace#disable()
-" let g:airline#extensions#whitespace#checks = [ 'indent', 'mixed-indent-file' ]
-" let g:airline#extensions#tagbar#enabled = 0
-
 " symbols
-  let g:airline_powerline_fonts = 1
-""""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
+
+
+" ultisnips & vim-snippets
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<C-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
-
 let g:UltiSnipsEditSplit="context"
-let g:UltiSnipsSnippetsDir="~/vimfiles/bundle/vim-snippets/UltiSnips/"
-""""""""""""""""""""""""""""""""""""""
-set tags=./tags;
-let g:easytags_dynamic_files = 1
-" let g:easytags_async = 1
-""""""""""""""""""""""""""""""""""""""
-let g:org_agenda_files=['~/org/work.org']
+"let g:UltiSnipsSnippetsDir="~/vimfiles/bundle/vim-snippets/UltiSnips/"
+
+" vim-easytags
+" set tags=./tags;
+" let g:easytags_dynamic_files = 1
+let g:easytags_dynamic_files = 2
+let gitroot = system("git rev-parse --show-superproject-working-tree --show-toplevel | tail -n1 | tr -d '\\n'")
+autocmd BufReadPre,FileReadPre * execute !empty(gitroot) ? 'setl tags=' . gitroot . "/.git/vimtags" : 'setl tags=~/.vimtags'

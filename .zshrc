@@ -62,11 +62,6 @@ source $ZSH/oh-my-zsh.sh
 # LS_COLORS+='*.sh=1;32:'
 # export LS_COLORS
 
-
-
-# autocompletion for drives
-zstyle ':completion:*' fake-files /: '/:c d e'
-
 # export CHERE_INVOKING=1
 alias s="pwd > ~/.pwd"
 function loadDir () cd "$(cat $1)"
@@ -79,17 +74,13 @@ if which tmux >/dev/null 2>&1; then
     (test -z "$(tmux ls)" && tmux new || (test -z "$TMUX" && tmux attach)) && exit
 fi
 
-# mount for VBox shared dri
-alias shareDir="sudo mount -t vboxsf home_pc ~/home_pc; \
-                sudo mount -t vboxsf D_DRIVE ~/pc/d; \
-                sudo mount -t vboxsf E_DRIVE ~/pc/e"
 
 # tmux function
 function t() {
     if [ $# -gt 0 ]; then
         eval 'tmux $@'
     else
-        tmux attach > /dev/null || tmux new > /dev/null 
+        tmux attach > /dev/null || tmux new > /dev/null
     fi
 }
 
@@ -97,3 +88,9 @@ function t() {
 function so() {
     eval 'unbuffer $@ |less -i'
 }
+
+# alias MacVim, java, ls
+alias vim="/Applications/MacVim.app/Contents/bin/vim"
+alias java="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/bin/java"
+alias javac="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/bin/javac"
+alias ls="ls -GF"
