@@ -64,10 +64,11 @@ source $ZSH/oh-my-zsh.sh
 
 # export CHERE_INVOKING=1
 alias s="pwd > ~/.pwd"
-function loadDir () cd "$(cat $1)"
+function loadDir () cd "$(cat $1)" >/dev/null 2>&1
 alias l="loadDir ~/.pwd"
 
 # TMUX
+touch ~/.pwd
 loadDir ~/.pwd
 if which tmux >/dev/null 2>&1; then
     #if not inside a tmux session, and if no session is started, start a new session
@@ -89,8 +90,9 @@ function so() {
     eval 'unbuffer $@ |less -i'
 }
 
-# alias MacVim, java, ls
-alias vim="/Applications/MacVim.app/Contents/bin/vim"
-alias java="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/bin/java"
-alias javac="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/bin/javac"
+# alias ls
 alias ls="ls -GF"
+
+# jenv (MacOS java version management)
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
