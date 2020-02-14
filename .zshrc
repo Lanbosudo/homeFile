@@ -90,8 +90,36 @@ function so() {
     eval 'unbuffer $@ |less -i'
 }
 
-# alias ls
+# alias common commands
 alias ls="ls -GF"
+alias gdni="git diff --no-index -b"
+alias gdr="git diff -b --color-words --minimal --word-diff-regex=\"[^ ,|\\\"]+\""
+alias dirs="dirs -p"
+
+# auto-refresh log
+function watch() {
+    if [[ -z "$2" ]]; then
+        lines=$1
+    else
+        lines=$2
+    fi
+
+    while true; do
+        l
+        clear
+        if [[ "$1" == "all" ]]; then
+            git --no-pager log --all --decorate --graph --oneline -"$lines"
+        else
+            git --no-pager log --decorate --graph --oneline -"$lines"
+        fi
+        line=""
+        read -t 5 line
+        if [[ $line =~ "^-?[[:digit:]]+$" ]]; then
+
+            let lines=$(( $lines+$line ))
+        fi
+    done
+}
 
 # jenv (MacOS java version management)
 export PATH="$HOME/.jenv/bin:$PATH"

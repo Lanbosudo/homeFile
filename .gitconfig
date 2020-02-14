@@ -4,7 +4,7 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = Peng Yingbo
+	name = Peng, Yingbo
 	email = yinpeng@paypal.com
 [core]
 	editor = vim
