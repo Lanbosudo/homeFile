@@ -11,3 +11,6 @@
 	autocrlf = input
 	whitespace = cr-at-eol
 	excludesfile = /Users/yinpeng/.gitignore_global
+[filesystem "Azul Systems, Inc.|1.8.0_212|/dev/disk1s1"]
+	timestampResolution = 1001 milliseconds
+	minRacyThreshold = 0 nanoseconds
