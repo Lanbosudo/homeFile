@@ -3,3 +3,10 @@
 *.log.1
 .DS_Store
 *.mul
+
+# for kafkaComplianceZeusD project
+day_*/
+derby.log
+metastore_db/
+payload.txt
+spark-warehouse
