@@ -95,6 +95,7 @@ alias ls="ls -GF"
 alias gdni="git diff --no-index -b"
 alias gdr="git diff -b --color-words --minimal --word-diff-regex=\"[^ ,|\\\"]+\""
 alias dirs="dirs -p"
+alias findf="find . -type f -name" # have to use \ to escape wildmatch symbols, e.g. *
 
 # auto-refresh log
 function watch() {
