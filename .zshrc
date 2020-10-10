@@ -64,11 +64,34 @@ source $ZSH/oh-my-zsh.sh
 
 
 # TMUX
-if which tmux >/dev/null 2>&1; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach || tmux new-session)
-fi
+#if which tmux >/dev/null 2>&1; then
+#    #if not inside a tmux session, and if no session is started, start a new session
+#    test -z "$TMUX" && (tmux new-session)
+#fi
+
+# autocompletion for drives
+zstyle ':completion:*' fake-files /: '/:c d e'
 
 # java alias
-alias java="/e/java/jdk1.8.0_91/bin/java.exe"
-alias javac="/e/java/jdk1.8.0_91/bin/javac.exe"
+#alias java="/e/java/jdk1.8.0_91/bin/java.exe"
+#alias javac="/e/java/jdk1.8.0_91/bin/javac.exe"
+
+# R alias
+alias R="/e/R/R-3.4.0/bin/x64/R.exe"
+alias Rterm="/e/R/R-3.4.0/bin/x64/Rterm.exe"
+alias Rscript="/e/R/R-3.4.0/bin/x64/Rscript.exe"
+
+# export CHERE_INVOKING=1
+alias s="pwd > ~/pwd"
+function loadDir () cd "$(cat $1)"
+alias l="loadDir ~/pwd"
+
+# mvn alias
+#alias mvn="/e/apache-maven-3.5.0/bin/mvn.cmd"
+
+# nodejs alias
+#alias node="/e/nodejs/node.exe"
+#alias npm="/e/nodejs/npm"
+
+#mysql
+alias mysql="/e/MySQL/MySQL\ Server\ 5.7/bin/mysql.exe"

@@ -1,0 +1,18 @@
+# git config files
+git*
+
+# all directories
+*/
+
+# all history files
+.*history*
+
+# misc
+.inputrc
+.viminfo
+.lesshst
+.zcompdump
+_viminfo
+tmux.exe.stackdump
+*.swp
+*.swo

@@ -1,7 +1,3 @@
-source ~/vimSource/vimrc_example.vim
-" source ~/vimSource/mswin.vim
-" behave mswin
-
 " original settings, including nocompatible and filetype and syntax...
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -32,8 +28,6 @@ set langmenu=en_GB.UTF-8
 syntax on
 set hlsearch
 
-" colorschem vividchalk
-" let g:solarized_termcolors=16
 set t_Co=256
 " syntax enable
 set background=dark
@@ -45,18 +39,14 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 " remap the ESC and leader key(used for replace Ctrl)
 let mapleader = ","
-imap jk <esc>
-"imap <leader>n <C-n>
-cmap jk <C-C>
 nmap ; :
-nmap <leader>z zz
-nmap <leader>r <C-r>
-nmap <leader>w <C-w>
-nmap <leader>y <C-y>
-nmap <leader>e <C-e>
+
 " stop 'Z''Z' from closing file without saving
 nmap ZZ zz
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
+
+" unset last search by hitting return
+nnoremap <CR> :noh<CR>
 
 set history=50        " keep 50 lines of command line history
 set ruler        " show the cursor position on statuline all the time
@@ -65,23 +55,21 @@ set incsearch        " do incremental searching
 
 set number
 set cindent
+set cinkeys-=0#
+set indentkeys-=0#
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 set nobk
+
+"backspace
+set backspace=indent,eol,start
+
 " set wildmenu		" show the waiting-for-selected items on statusline
 "                    >_< (hard to find)
 "                    prefer  now
 set wildmode=list:longest
-" set ignorecase
-
-" maps about the compile
-" map <F2> :!cls<CR>
-map <F5> :!g++ -g -Wall % -o %<.exe <CR>
-" map <F6> :!make <CR>
-" map <F7> :!g++ -g -Wall *.cpp *.h -o execute.exe <CR>
-" map <F8> :!gdb *.exe <CR>
 
 " set the window size
 set winheight=10
@@ -97,28 +85,12 @@ set mouse=""
 " set the statusline
 set laststatus=2
 
-set noautochdir         " disabled for VimShell
-
-
-" abbreviate for some usual commands
-abbreviate nt NERDTree
-abbreviate ntf NERDTreeFromBookmark
-abbreviate nh nohlsearch
-abbreviate sop System.out.print()
-abbreviate sopl System.out.println()
-abbreviate vsh VimShell
-
 " set fold flag background black
 highlight Folded guibg=black
 " set to auto save and load the fold infor
-au BufWinLeave _vimrc mkview
-" au BufWinLeave *.h mkview
-" au BufWinLeave *.cpp mkview
-au BufWinLeave *+.* mkview
-au BufWinEnter _vimrc silent loadview
-" au BufWinEnter *.h silent loadview
-" au BufWinEnter *.cpp silent loadview
-au BufWinEnter *+.* silent loadview
+" au BufWinLeave *.* silent mkview
+" au BufWinEnter *.* silent loadview
+autocmd BufEnter * silent! lcd %:p:h
 
 
 """""""""""""""""""""""""""""""""""""""
@@ -134,35 +106,39 @@ call vundle#begin('~/vimfiles/bundle/')
 Plugin 'VundleVim/Vundle.vim'
 """""""""""""""""""""""""""""""""""""""
 " My Bundles here:
+
 "
-" statuline replacing powerline(not practical in cygwin)
-" Plugin 'millermedeiros/vim-statline'
-" not easy to use; too many functions over my head :p
-" Plugin 'OmniCppComplete'
-Plugin 'ajh17/VimCompletesMe'
-" Plugin 'ervandew/supertab'
-" auto complete with cache, not cool
-" Plugin 'neocomplcache'
-" Junst cannot compile and install.....TAT
-" Plugin 'Valloric/YouCompleteMe'
 " Track the engine (works on Vim 7.4 +)
-Plugin 'SirVer/ultisnips'
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+if has('gui_running')
+else
+    " next generation of neocomplcache
+    Plugin 'Shougo/neocomplete.vim'
+
+    " Plugin 'SirVer/ultisnips'
+    " Snippets are separated from the engine. Add this if you want them:
+    " Plugin 'honza/vim-snippets'
+endif
+"
 " Light statusline
 Plugin 'vim-airline/vim-airline'
-Plugin 'majutsushi/tagbar'
+"
+" Vim tag management
+Plugin 'vim-easytags'
+" Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-misc'
 
 " vim-scripts repos
 Plugin 'ctrlp.vim'
 " buffer manager
 Plugin 'bufexplorer.zip'
-" directory tree
-" Plugin 'The-NERD-tree'
-" NERD_TREE plugin
-" Plugin 'NERD_tree-Project'
-" compile error check (installation process unkonwn)
-" Plugin 'Syntastic'
+
+" Skip through codes
+Plugin 'EasyMotion'
+
+" Org mode support
+Plugin 'vim-orgmode'
+Plugin 'speeddating.vim'
+Plugin 'NrrwRgn'
 
 " non github repos
 " Plugin 'git://git.wincent.com/command-t.git'
@@ -170,27 +146,9 @@ Plugin 'bufexplorer.zip'
 call vundle#end()               " required!
 filetype plugin indent on     " required!
 "
-""""""""""""""""""""""""""""""""""""""""""
-"	settings for plugin NERDTree:
-"
-" tell the script NERDTree to change the current working directory (CWD) for vim
-" let NERDTreeChDirMode=2
-
-" caseSensitiveSort for NERDTree
-" let NERDTreeCaseSensitiveSort=1
-
-" line number
-" let NERDTreeShowLineNumbers=1
-
-" toggles whether hidden files are displayed
-" let NERDTreeShowHidden=1
-"
-" set the window size
-" let NERDTreeWinSize=52
-"
 """""""""""""""""""""""""""""""""""""""
-" neocomplcache setting
-" let g:neocomplcache_enable_at_startup = 1
+" neocomplete setting
+let g:neocomplete#enable_at_startup = 1
 
 """"""""""""""""""""""""""""""""""""""
 " ctrlp option
@@ -199,34 +157,24 @@ let g:ctrlp_regexp = 0
 let g:ctrlp_match_window_bottom = 1
 
 """"""""""""""""""""""""""""""""""""""
-" Syntastic option
-" let g:syntastic_cpp_check_header = 1
-" let g:syntastic_mode_map = { 'mode': 'passive',
-"                            \ 'active_filetypes': ['ruby', 'php'],
-"                            \ 'passive_filetypes': ['puppet'] }
-"
-""""""""""""""""""""""""""""""""""""""
-" statline option
-" let g:statline_filename_relative = 1
-" let g:statline_show_charcode = 1
-"
-""""""""""""""""""""""""""""""""""""""
 " BuffExplorer option
 let g:bufExplorerShowUnlisted=1      " Show unlisted buffers.
 """"""""""""""""""""""""""""""""""""""
-" VimShell
-" Use current directory as vimshell prompt.
-" let g:vimshell_prompt_expr =
-" \ 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
-" let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
-""""""""""""""""""""""""""""""""""""""
 " vim-airline
+" silent! call airline#extensions#whitespace#disable()
 "let g:airline#extensions#whitespace#checks = [ 'indent', 'mixed-indent-file' ]
+"let g:airline#extensions#tagbar#enabled = 0
+let g:airline_powerline_fonts = 1
 """"""""""""""""""""""""""""""""""""""
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<C-j>"
+let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<C-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 
 let g:UltiSnipsEditSplit="context"
 let g:UltiSnipsSnippetsDir="~/vimfiles/bundle/vim-snippets/UltiSnips/"
+""""""""""""""""""""""""""""""""""""""
+set tags=./tags;
+let g:easytags_dynamic_files = 1
+""""""""""""""""""""""""""""""""""""""
+let g:org_agenda_files=['~/org/work.org']

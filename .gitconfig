@@ -1,0 +1,7 @@
+[user]
+	email = lanbosudo@gmail.com
+	name = lanbosudo
+[core]
+	editor = vim
+	autocrlf = input
+	whitespace = cr-at-eol,
