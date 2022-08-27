@@ -1,0 +1,41 @@
+altscreen on
+
+hardstatus off
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
+
+startup_message off
+
+# 256 colors
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defbce on
+term screen-256color
+
+# mouse tracking allows to switch region focus by clicking
+mousetrack on
+
+bind ^l resize -h +10
+bind ^j resize -v +10
+bind ^h resize -h -10
+bind ^k resize -v -10
+
+bind h focus left
+bind j focus down
+bind k focus up
+bind l focus right
+
+bind \" eval "split" "focus" "next"
+bind | eval "split -v" "focus" "next"
+
+bind ^a meta
+bind O only
+bind K remove
+bind L redisplay
+
+bind s
+
+nonblock 10
+
+bind d
+bind ^D
